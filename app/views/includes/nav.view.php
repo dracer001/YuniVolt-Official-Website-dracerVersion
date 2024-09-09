@@ -1,5 +1,5 @@
-<header class="shadow sticky-top">    
-      <nav class="px-4 py-2">
+<header class="shadow">    
+      <nav class="px-lg-5 py-lg-3 px-4 py-2">
         <div class="d-flex align-items-center justify-content-between">
          <div class="d-flex align-items-center justify-content-between">
            
@@ -11,7 +11,7 @@
         
         <div class="">
           <a class="navbar-brand d-flex align-items-center" href="<?=ROOT?>/">
-          <img src="<?=ROOT?>/assets/media/icons/logo.png" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
+          <img src="<?=ROOT?>/assets/media/icons/logo.png" alt="Logo" class="d-inline-block align-text-top company-logo">
             <div class="company-title d-flex flex-column align-items-center justify-content-center">
               <span class="company-name">Yunivolt</span>
               <span class="company-slogan">(Power & Security)</span>
@@ -41,6 +41,7 @@
               <li><a href="<?=ROOT?>/?url=about">About Us</a></li>
               <li><a href="<?=ROOT?>/?url=service"> Products & Services</a></li>
               <li><a href="<?=ROOT?>/?url=academy">Academy</a></li>
+              <li><a href="<?=ROOT?>#contacts">Solar Calc</a></li>
               <li><a href="<?=ROOT?>#contacts">Contacts</a></li>
             </ul>
             <div class="auth-btns d-none px-3">
