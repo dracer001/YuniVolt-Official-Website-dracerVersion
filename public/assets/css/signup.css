@@ -1,0 +1,16 @@
+ 
+
+@media(min-width: 854px){
+    /*_____General PROPERTY_______________*/ 
+ 
+
+    .defaultSec{
+        margin: 0 25%;
+    } 
+
+    .generalPopUp-child{ 
+        width:40%; 
+        left: 30%; 
+        right: 30%;   
+      }
+}

@@ -1,0 +1,117 @@
+/*$blue: #0d6efd; $indigo: #6610f2; $purple: #6f42c1; $pink: #d63384; $red: #dc3545; $orange: #fd7e14; $yellow: #ffc107; $green: #198754; $teal: #20c997; $cyan: #0dcaf0;*/
+
+
+header{
+    /* background: #052F5F;
+    001F54
+     0A1128
+     03045E
+     */
+    background: #03045E;
+    border-bottom: 2px solid orangered;
+  }
+  
+  .nav-btn{
+    gap: 5px;
+  }
+  
+  
+  .nav-btn-item{
+    width: 20px;
+    height: 2px;
+    background : #555;
+  }
+  
+  .company-name{
+    color: orangered;
+    font-weight:bold;
+    font-size: 1.2em;
+  }
+  
+  .company-slogan{
+    font-size: 0.6em;
+    font-weight: light;
+    font-style: italic;
+    margin-top: -5px;
+    color: orange;
+    
+  }
+  
+  .company-title{
+      padding: 0;
+      gap: 0;
+  }
+  
+  .nav-content{
+    gap: 1.2em;
+  }
+  
+  .user-action{
+    gap: 0.2em;
+  }
+  
+  .user-action button{
+    border: none;
+    background: none;
+  }
+  .user-action i{
+    font-size: 1.5em;
+    color: orange;
+  }
+  .nav-content a{
+    text-decoration: none ;
+  }
+  .nav-content-container.open{
+    position : fixed;
+    display : block !important;
+    width: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 5000;
+    transition: width 2s;
+  }
+  
+  
+  .open .nav-content{
+    display: block !important;
+    /* position: absolute ;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); */
+    margin: 50px 20px;
+    
+  }
+  
+  .open .nav-content li{
+    margin-bottom: 12px;
+  }
+  
+  .nav-content li a{
+    color: orange;
+  }
+  
+  .close-nav{
+    font-size: 1.5em;
+  }
+  .open .close-nav{
+    /* position : absolute;
+    top: 15px;
+    right: 12px; */
+    
+    
+  }
+  
+  .offcanvas-header{
+    background: #f5f5f5;
+    display: none;
+  }
+  .open .offcanvas-header {
+    display: flex;
+  }
+  
+  .open .auth-btns{
+    display: block !important ;
+  }
+  
