@@ -148,9 +148,13 @@
 }
 
 h3{
-  color: #1dd41d;
+  color: #f88808;
+  font-family: "Quicksand", sans-serif;
 }
 
+.acad-intro{
+  color: #888;
+}
 .shopping-container{
   position: relative;
   height: 400px;

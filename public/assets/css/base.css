@@ -32,6 +32,18 @@ h2.sub-header{
     border: 1px solid #ff6600;
 }
   
+.btn-g-primary{
+    background-color: #1dd41d;
+    border-color: #1dd41d;
+    color: #fff;
+}
+  
+.btn-g-outline-primary{
+    background: transparent;
+    color: #1dd41d;
+    border: 1px solid #1dd41d;
+}
+  
 .btn-b-primary{
     background-color: #03045E;
     border-color: #03045E;

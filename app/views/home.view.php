@@ -57,7 +57,7 @@
             </div>
             <div class="col-12 col-lg-6 my-3 row align-items-center">
               <h3 class="text-center">Yunivolt Academy</h3>
-              <p class="text-center">
+              <p class="text-center acad-intro">
               Elevate your skills with Yunivolt Academy’s expert-led training programs. Whether you're a beginner or a pro, our comprehensive courses are designed to provide you with practical knowledge and hands-on experience. Join us to master new technologies, advance your career, and stay ahead in the fast-evolving tech world.
               </p>
               <a href="" class="btn btn-c-outline-primary mx-auto w-auto">Visit Our Academy</a>
@@ -77,25 +77,13 @@
           </div>
         </section>
    
-   
-    </main>
-
-    <?php $this->view('includes/footer') ?>
-   
-</body>
-</html>
-
-
-<!-- <main id="main" >  -->
-   <!-- <section id="SSG" class="power-calculator"> -->
-      <!-- <div class="power-calculator-landing">
-         <h2 class="brand-cl-blue">Solar System Calculator</h2>
-         <p class="pd-lr20px">
-            Find out your solar needs based on your home or office appliances.
-         </p>
-      </div> 
-          -->
-     <!-- <div class="ooo"> 
+        <section class="container">
+          <div class="power-calculator-landing">
+            <h2 class="brand-cl-blue">Solar System Calculator</h2>
+            <p class="pd-lr20px">
+                Find out your solar needs based on your home or office appliances.
+            </p>
+          </div> 
       <div class="container"> 
          <p class="warningTag">Make sure your inputs are correct!</p>
          <label for="electricLoad">Electric Load in decimal:</label>
@@ -170,9 +158,15 @@
                </div>  
             </div>
       </div>
-     </div> -->
-   <!-- </section> -->
-<!-- </main> -->
+      </section>
+   
+    </main>
+
+    <?php $this->view('includes/footer') ?>
+   
+</body>
+</html>
+
 
 <!-- End #main --> 
  
