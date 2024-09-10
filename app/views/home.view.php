@@ -32,14 +32,23 @@
           </div>
         </section>
         
-        <section class="container " >
+        <section class="container my-5" >
           <h2 class="text-center sub-header mb-1">Products & Services</h2>
           <div class="header-underline mx-auto mt-0 mb-3"></div>
-          <div class="border rounded shadow row align-items-center p-3 mb-3">
-            <p class="h2 display-6 p-3 text-center">
-              Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.
+          <div class="border rounded shadow row align-items-center p-3 p-md-5 mb-3 services">
+            <h3 class="text-center">Explore Yunivolt's CHESTS</h3>
+            <p class="text-center">
+              At Yunivolt, we offer a diverse range of services that blend power, security, and convenience, giving our customers the freedom to seamlessly carry out their day-to-day activities. Our services can be summed up as treasured "CHEST," where each letter represents a key aspect of what we hold dear
             </p>
-            <a href="" class="btn btn-success w-auto m-auto">View Services</a>
+            <div class="d-flex chests-container justify-content-center">
+              <div class="chests"><span class="chests-icon">C</span> CCTV Camera</div>
+              <div class="chests"><span class="chests-icon">H</span>Home Automation</div>
+              <div class="chests"><span class="chests-icon">E</span>Electrical Installation</div>
+              <div class="chests"><span class="chests-icon">S</span>Solar & Inverter system</div>
+              <div class="chests"><span class="chests-icon">T</span>Training</div>
+              <div class="chests"><span class="chests-icon">S</span>Software (solar packages Installation)</div>
+            </div>
+            <a href="" class="btn btn-c-primary w-auto m-auto my-3">Uncover Our CHESTS</a>
           </div>
           
           <div class="border rounded shadow row align-items-center p-3 mb-3 justify-content-between">
@@ -49,9 +58,9 @@
             <div class="col-12 col-lg-6 my-3 row align-items-center">
               <h3 class="text-center">Yunivolt Academy</h3>
               <p class="text-center">
-              Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.
+              Elevate your skills with Yunivolt Academy’s expert-led training programs. Whether you're a beginner or a pro, our comprehensive courses are designed to provide you with practical knowledge and hands-on experience. Join us to master new technologies, advance your career, and stay ahead in the fast-evolving tech world.
               </p>
-              <a href="" class="btn btn-outline-success mx-auto w-auto">Visit Our Academy</a>
+              <a href="" class="btn btn-c-outline-primary mx-auto w-auto">Visit Our Academy</a>
             </div>
           </div>
           

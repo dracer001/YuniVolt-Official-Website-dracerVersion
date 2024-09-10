@@ -21,15 +21,15 @@ h2.sub-header{
 }
 
 .btn-c-primary{
-    background-color: orangered;
-    border-color: orangered;
+    background-color: #ff6600;
+    border-color: #ff6600;
     color: #fff;
 }
   
 .btn-c-outline-primary{
     background: transparent;
-    color: orangered;
-    border: 1px solid orangered;
+    color: #ff6600;
+    border: 1px solid #ff6600;
 }
   
 .btn-b-primary{

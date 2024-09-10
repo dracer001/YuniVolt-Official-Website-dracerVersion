@@ -51,8 +51,6 @@
   -webkit-text-fill-color: transparent; /* Makes the text color transparent to show the gradient */
 }
 
-
-
 #about-us img{
   border-radius: 12px;
 }
@@ -60,6 +58,97 @@
   font-size: 1.2em;
   line-height: 1.6;
   font-family: "Open Sans", sans-serif;;
+}
+
+.services{
+  /* background-color: #eec26f; */
+}
+
+.chests-container{
+  gap: 2rem;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
+
+.chests{
+  padding: 2rem;
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  box-sizing: content-box;
+  text-align: center;
+  position: relative;
+  border: 2px solid;
+  border-radius: 10px;
+
+
+
+  /* -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(45deg,  #2bff00, #054be2);
+  border-image: linear-gradient(45deg, #2bff00, #054be2) 1; */
+}
+
+.chests:nth-child(1){
+  background: linear-gradient(135deg, #2bff00, #054be2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image: linear-gradient(135deg, #2bff00, #054be2) 1;
+}
+
+.chests:nth-child(2){
+  background: linear-gradient(45deg, #054be2, #e2cc05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image: linear-gradient(45deg, #054be2, #e2cc05) 1;
+}
+
+.chests:nth-child(3){
+  background: linear-gradient(135deg, #e2cc05, #ff3c00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image: linear-gradient(135deg, #e2cc05, #ff3c00) 1;
+}
+
+.chests:nth-child(4){
+  background: linear-gradient(45deg, #ff3c00, #48ff00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image: linear-gradient(45deg, #ff3c00, #48ff00) 1;
+}
+
+.chests:nth-child(5){
+  background: linear-gradient(135deg, #48ff00, #00c3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image: linear-gradient(135deg, #48ff00, #00c3ff) 1;
+}
+
+.chests:nth-child(6){
+  background: linear-gradient(45deg, #00c3ff, #ffa600);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-image: linear-gradient(45deg, #00c3ff, #ffa600) 1;
+}
+
+.chests-icon{
+  position: absolute;
+  top: -50px;
+  left: 0;
+  z-index: 5;
+  color: #1dd41d;
+}
+
+h3{
+  color: #1dd41d;
 }
 
 .shopping-container{
