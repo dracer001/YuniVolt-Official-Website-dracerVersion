@@ -1,7 +1,20 @@
 header{
   border-bottom: 2px solid #ff3c00;
 }
- 
+.header-nav {
+  position: sticky; /* Keeps the header fixed at the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transform: translateY(0); /* Default: visible */
+  transition: transform 0.3s ease; /* Smooth transition */
+  background: aliceblue;
+}
+
+.hidden {
+  transform: translateY(-100%); /* Moves header up out of view */
+}
+
 
 /* Nav button for mobile view */
 

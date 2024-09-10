@@ -1,4 +1,4 @@
-<header class="shadow">    
+<header class="shadow header-nav">    
       <nav class="px-lg-5 py-lg-3 px-4 py-2">
         <div class="d-flex align-items-center justify-content-between">
          <div class="d-flex align-items-center justify-content-between">

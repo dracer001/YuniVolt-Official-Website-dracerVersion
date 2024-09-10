@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="<?=ROOT?>/assets/css/footer.css" type="text/css">
 
 <!--Page Css-->
-    <link rel="stylesheet" href="<?=ROOT?>/assets/css/<?=App::$page?>.css" type="text/css"> 
+    <link rel="stylesheet" href="<?=ROOT?>/assets/css/<?=App::$page?>.css" type="text/css">
+    
+<!-- required js -->
+    <script src="<?=ROOT?>/assets/js/header.js" defer> </script>
          
   

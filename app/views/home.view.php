@@ -11,7 +11,7 @@
         <div class="hero">
           <img class="hero-img" src="<?=ROOT?>/assets/media/images/hero.webp" alt="">
           <div class="hero-text p-3">
-            <p class="h2">Transforming spaces with innovative energy solutions, advanced security, and intelligent systems—experience the unseen power of Yunivolt.</p>
+            <p class="h2">Transforming spaces with innovative energy solutions, advanced security, and intelligent systems <span class="hero-caption"> - experience the unseen power of</span> <br> <span class="hero-caption-title"> Yunivolt</span></p>
           </div>
         </div>
         
@@ -21,10 +21,10 @@
             <div class="col-12 col-lg-8">
               <h2 class="text-center sub-header mb-1"> Who we are.</h2>
               <div class="header-underline mx-auto mt-0 mb-3"></div>
-              <p class="px-2">
-              At Yunivolt, we specialize in integrating advanced energy, security, and automation solutions to enhance modern living. With expertise in solar installations, electrical systems, CCTV surveillance, and smart home technology, we are committed to delivering reliable, innovative, and tailored services that meet the unique needs of our clients. Our mission is to provide not just power and security, but peace of mind through seamless and sustainable solutions. Whether you’re looking to upgrade your home’s energy efficiency, enhance security, or simplify your life with automation, Yunivolt is your trusted partner.
+              <p class="px-2 about-content">
+                At Yunivolt, we specialize in integrating advanced energy, security, and automation solutions to enhance modern living. With expertise in solar installations, electrical systems, CCTV surveillance, and smart home technology, we are committed to delivering reliable, innovative, and tailored services that meet the unique needs of our clients. Our mission is to provide not just power and security, but peace of mind through seamless and sustainable solutions. Whether you’re looking to upgrade your home’s energy efficiency, enhance security, or simplify your life with automation, Yunivolt is your trusted partner.
               </p>
-              <a href="#" class="btn-link ps-2">Learn more...</a>
+              <a href="<?=ROOT?>/?url=about" class="btn-link ps-2">Learn more...</a>
             </div>
             <div class="d-none d-lg-block col-lg-4">
               <img class="img-fluid ronded-3 " src="<?=ROOT?>/assets/media/images/engineering.jpg" alt="emplyee images">
