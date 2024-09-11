@@ -187,3 +187,27 @@ h3{
   max-width: 560px;
   text-align: center;
 }
+
+.result{
+  min-height: 350px;
+  background-color: #ccc;
+}
+
+.calc{
+  min-height: 350px;
+}
+
+.calc-list{
+  height: 120px;
+  /* overflow-y: scroll; */
+  overflow: hidden;
+}
+
+.add-calc-item{
+  padding: 0.3em 0.5em;
+  font-size: 0.9em;
+}
+
+.remove-calc-item{
+  font-size: 1.2em;
+}

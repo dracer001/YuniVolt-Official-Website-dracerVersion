@@ -78,86 +78,70 @@
         </section>
    
         <section class="container">
-          <div class="power-calculator-landing">
-            <h2 class="brand-cl-blue">Solar System Calculator</h2>
-            <p class="pd-lr20px">
-                Find out your solar needs based on your home or office appliances.
-            </p>
-          </div> 
-      <div class="container"> 
-         <p class="warningTag">Make sure your inputs are correct!</p>
-         <label for="electricLoad">Electric Load in decimal:</label>
-         <input type="number" id="electricLoad" step="0.01" min="0" required>
-         
-         <div class="ds-flex">
-           <div class="wd50pc">
-            <label for="electronic">Electronic Load:</label>
-            <input type="text" id="electronic" style="width: 120px;" placeholder="e.g Television" required>
-           </div> 
-           <div class="wd25pc">
-            <label for="electronicWat">Wat:</label><br>
-            <input type="number" id="electronicWat" style="width: 40px; height: 8px;" min="10" value="0" required>
-           </div> 
-           <div class="wd20pc txtAli-center mg-left30px pd-top5px">
-            <button class="btn-spc-small" onclick="addElectricLoad()">Add</button>
-            <button class="btn-spc-small mg-top5px" onclick="clearElectricLoad()">Reset</button>
-           </div>
-         </div>
-
-         
-         <select id="questionType" onchange="addInputField()" name="answer_type">
-            <option value="none" disabled>-Select-</option>
-            <option value="text">Text</option>
-            <option value="select">Select</option>   
-         </select><br><br>
-
-         <div id="loadsContainer" class="ds-none"></div> 
-         <div class="ds-flex">
-            <label class="wd250px ht30px pd-top10px">Total Load (wat):</label>
-           <input type="number" id="watHolder" value="0" disabled required>
-         </div>  
-
-         <div class="ds-flex">
-           <div class="wd60pc">
-            <label for="loadTime">Power Time (Hours):</label>
-            <input type="number" id="loadTime" style="width: 120px; height: 8px;" required> 
-           </div>
-           <div class="wd30pc">
-            <label for="loadTime">Panels:</label>
-            <input type="number" id="panels" style="width: 80px; height: 8px;" value="4" required> 
-           </div>  
-         </div>  
-
-        <button class="mg-bottom20px" onclick="generateSolarSystem()">Calculate</button> 
-      </div> 
-
-      <div id="resultWrapper" class="ds-none">
-         <h2 class="brand-cl-black ft-size19px">RESULT</h2>
-           <p id="param33" style="padding-bottom: 10px; font-size:16px;">
-              Your load is <span id="loads"></span>
-              W, and you want the setup to carry it for <span id="timeUsage"></span>
-              hours. Below is what you need:
-           </p>
-           <p id="param44" style="padding-bottom: 10px;"></p> 
-           <p id="param55" style="padding-bottom: 10px;"></p>  
-           <p id="param66" style="padding-bottom: 10px;"></p>   
-           <div>
-              <h2 class="txtAli-center brand-cl-black">Need This Above Setup?</h2>
-              <p>Automatically send it to us - by inputing your email and click "Email Now"</p>
-              
-               <div class="ds-flex"> 
-                  <div class="wd60pc">
-                   <form action="" class="mg-top20px">
-                    <label for="loadTime">Input Your Email:</label>
-                    <input type="email" style="height: 20px;" required> 
-                   </form>
-                  </div>  
-                  <div class="wd30pc" style="margin-left: 5%;">   
-                    <a href="mailto:yunivolttech@gmail.com?subject=YuniVolt - I Need This Setup&body=Hi, I am interested in getting this setup:"><button class="wd100px mg-top31px">Email Now!</button></a>
-                  </div>
-               </div>  
+          <h2 class="text-center sub-header mb-1">Solar System Calculator</h2>
+          <div class="header-underline mx-auto mt-0 mb-3"></div>
+          <p class="text-center">
+              Find out your solar needs based on your home or office appliances.
+          </p>
+          <div class="row row-cols-lg-2 row-cols-1">
+            <div class="col">
+              <h3 class="text-center">Calculator</h3>
+              <div class="calc border rounded-3 py-3 px-2 py-lg-3">
+                <table>
+                  <thead>
+                    <tr class="row align-items-center">
+                      <th class="col-6">Appliances/Item</th>
+                      <th class="col-3 text-break">Consumption (Watts)</th>
+                      <th class="col-2">Quantity</th>
+                      <th class="col-1"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="calc-list" id="calc-list">
+                    <tr class="row align-items-center" id="calc-item">
+                      <td class="col-6">
+                       <input type="text" class="form-control" name="" id="" placeholder="e.g bulb">
+                      </td>
+                      <td class="col-3">
+                       <input type="number" class="form-control" name="" id="" placeholder="0.00">
+                      </td>
+                      <td class="col-2">
+                       <input type="number" class="form-control" name="" id="" value="1">
+                      </td>
+                      <td class="col-1">
+                       <i class="bi bi-x remove-calc-item"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tfoot class="">
+                    <tr class="row justify-content-end mt-3">
+                      <td class="col-3">
+                      <button class="btn btn-g-primary add-calc-item w-100"><i class="bi bi-plus"></i>add</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>Total load (Watts): <span></span></p>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <div>
+                  <label for="">Power time per day (Hours)</label>
+                  <input type="text">
+                </div>
+                <button class="btn btn-g-primary">Calculate</button>
+              </div>
             </div>
-      </div>
+            <div class="col">
+              <h3 class="text-center">Results</h3>
+              <div class="result rounded-3">
+
+              </div>
+            </div>
+          </div>
+          <div class="send-result">
+
+          </div>
       </section>
    
     </main>
