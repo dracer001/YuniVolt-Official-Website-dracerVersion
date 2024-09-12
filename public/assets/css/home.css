@@ -199,9 +199,42 @@ h3{
 
 .calc-list{
   height: 120px;
-  /* overflow-y: scroll; */
-  overflow: hidden;
+  overflow-y: scroll;
+  display: block; 
+
 }
+
+.calc-list tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Customize the scroll bar for webkit-based browsers */
+
+tbody::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar */
+}
+
+tbody::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* Scrollbar track/container color */
+}
+
+tbody::-webkit-scrollbar-thumb {
+  background-color: #555; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Make the thumb rounded */
+}
+
+tbody::-webkit-scrollbar-thumb:hover {
+  background-color: #333; /* Thumb color on hover */
+}
+
+/* Optional: To hide scroll arrows (only works on some browsers) */
+tbody::-webkit-scrollbar-button {
+  display: none;
+}
+
+
 
 .add-calc-item{
   padding: 0.3em 0.5em;

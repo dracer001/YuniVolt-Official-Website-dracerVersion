@@ -23,5 +23,6 @@
     
 <!-- required js -->
     <script src="<?=ROOT?>/assets/js/header.js" defer> </script>
+    <script src="<?=ROOT?>/assets/js/<?=App::$page?>.js" defer> </script>
          
   

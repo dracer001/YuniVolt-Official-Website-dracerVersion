@@ -102,25 +102,25 @@
                        <input type="text" class="form-control" name="" id="" placeholder="e.g bulb">
                       </td>
                       <td class="col-3">
-                       <input type="number" class="form-control" name="" id="" placeholder="0.00">
+                       <input type="number" class="form-control watt-input" name="" id="" placeholder="0.00">
                       </td>
                       <td class="col-2">
-                       <input type="number" class="form-control" name="" id="" value="1">
+                       <input type="number" class="form-control quantity-input" name="" id="" value="1">
                       </td>
                       <td class="col-1">
-                       <i class="bi bi-x remove-calc-item"></i>
+                        <button type="button" class="btn remove-calc-item"><i class="bi bi-x"></i></button>
                       </td>
                     </tr>
                   </tbody>
                   <tfoot class="">
                     <tr class="row justify-content-end mt-3">
                       <td class="col-3">
-                      <button class="btn btn-g-primary add-calc-item w-100"><i class="bi bi-plus"></i>add</button>
+                      <button type="button" class="btn btn-g-primary add-calc-item w-100"><i class="bi bi-plus"></i>add</button>
                       </td>
                     </tr>
                     <tr>
-                      <td>
-                        <p>Total load (Watts): <span></span></p>
+                      <td >
+                        <p class="d-flex">Total load (Watts): <input type="text" class="form-control total-load" value="0.00"  readonly></p>
                       </td>
                     </tr>
                   </tfoot>

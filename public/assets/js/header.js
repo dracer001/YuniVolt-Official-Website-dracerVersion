@@ -19,23 +19,6 @@ window.addEventListener('scroll', () => {
 });
 
 
-// For adding item to calculator container
-const calcItem = document.getElementById('calc-item').cloneNode(true);
-const calcList = document.getElementById('calc-list')
-document.querySelector('.remove-calc-item').addEventListener('click', (event)=>{
-  event.target.parentNode.parentNode.remove()
-})
-
-
-document.querySelector('.add-calc-item').addEventListener('click', ()=>{
-  let cloneCalcItem = calcItem.cloneNode(true)
-  cloneCalcItem.querySelector('.remove-calc-item').onclick = ()=>{
-    cloneCalcItem.remove()
-  }
-  calcList.appendChild(cloneCalcItem)
-})
-
-
 
 
 
