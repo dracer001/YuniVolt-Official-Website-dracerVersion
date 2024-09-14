@@ -22,7 +22,11 @@
     <link rel="stylesheet" href="<?=ROOT?>/assets/css/<?=App::$page?>.css" type="text/css">
     
 <!-- required js -->
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="<?=ROOT?>/assets/js/header.js" defer> </script>
+
+<!-- Page Js -->
     <script src="<?=ROOT?>/assets/js/<?=App::$page?>.js" defer> </script>
          
   

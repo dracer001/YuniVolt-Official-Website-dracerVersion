@@ -78,3 +78,108 @@
         </div>
       </nav>
     </header>
+
+
+    <!-- Modal -->
+<div class="modal fade" id="sign-up-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Register</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="border rounded-3 p-3 shadow">
+          <div class="mb-3">
+            <label for="full-name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" name="full-name" placeholder="Surname Firstname">
+          </div>
+          
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="email@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="password">
+          </div>
+          <div class="mb-3">
+            <label for="c-password" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" name="c-password" placeholder="">
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+          
+          <div class="google-auth my-3">
+            <div id="g_id_onload"
+              data-client_id="856091974883-ras3bsdnkqu91gfp55846ovmpop7jnrk.apps.googleusercontent.com"
+              data-context="signup"
+              data-ux_mode="popup"
+              data-login_uri="http://localhost:8080/"
+              data-nonce=""
+              data-auto_select="true"
+              data-itp_support="true">
+            </div>
+
+            <div class="g_id_signin"
+              data-type="standard"
+              data-shape="rectangular"
+              data-theme="outline"
+              data-text="signin_with"
+              data-size="large"
+              data-logo_alignment="left">
+            </div> 
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="sign-in-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="border rounded-3 p-3 shadow">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="email@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+
+          <div class="google-auth my-3">
+            <div id="g_id_onload"
+              data-client_id="856091974883-ras3bsdnkqu91gfp55846ovmpop7jnrk.apps.googleusercontent.com"
+              data-context="signin"
+              data-ux_mode="popup"
+              data-login_uri="http://localhost:3500"
+              data-nonce=""
+              data-auto_select="true"
+              data-itp_support="true">
+            </div>
+
+            <div class="g_id_signin"
+              data-type="standard"
+              data-shape="rectangular"
+              data-theme="outline"
+              data-text="signin_with"
+              data-size="large"
+              data-logo_alignment="left">
+            </div> 
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
