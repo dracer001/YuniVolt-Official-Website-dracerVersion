@@ -120,22 +120,29 @@
                     </tr>
                     <tr>
                       <td >
-                        <p class="d-flex">Total load (Watts): <input type="text" class="form-control total-load" value="0.00"  readonly></p>
+                        <p class="d-flex">Total load (Watts): <input type="number" class="form-control total-load" value="0.00"  readonly></p>
                       </td>
                     </tr>
                   </tfoot>
                 </table>
                 <div>
                   <label for="">Power time per day (Hours)</label>
-                  <input type="text">
+                  <input type="text" class="load-time">
                 </div>
-                <button class="btn btn-g-primary">Calculate</button>
+                <button class="btn btn-g-primary clac-btn">Calculate</button>
               </div>
             </div>
             <div class="col">
               <h3 class="text-center">Results</h3>
               <div class="result rounded-3">
-
+                <div class="result-display p-3">
+                  <p>Your load is toatal load = <span class="result-info loads py-1 px-3"></span> Watts</p>
+                  <p>Time duration per day = <span class="result-info time-usage py-1 px-3"></span>hours</p>
+                  <p class="mt-5">Here are the following setup required</p>
+                  <p class="result-info battery-amount"></p>
+                  <p class="result-info panel-amount"></p>
+                  <p class="result-info charging-duration"></p>
+                </div>
               </div>
             </div>
           </div>

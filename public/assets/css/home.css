@@ -189,18 +189,19 @@ h3{
 }
 
 .result{
-  min-height: 350px;
+  min-height: 400px;
   background-color: #ccc;
 }
 
 .calc{
-  min-height: 350px;
+  min-height: 400px;
 }
 
 .calc-list{
   height: 120px;
   overflow-y: scroll;
   display: block; 
+  overflow-x: hidden;
 
 }
 
@@ -234,7 +235,15 @@ tbody::-webkit-scrollbar-button {
   display: none;
 }
 
+.watt-input::-webkit-outer-spin-button,
+.watt-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+.watt-input {
+  -moz-appearance: textfield;
+}
 
 .add-calc-item{
   padding: 0.3em 0.5em;
@@ -243,4 +252,20 @@ tbody::-webkit-scrollbar-button {
 
 .remove-calc-item{
   font-size: 1.2em;
+}
+
+.result-display{
+  display: none;
+}
+
+span.result-info{
+  background: #ffa500;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+p.result-info{
+  background: #fff;
+  border-left: 5px solid orange;
+  padding: 0.5rem 1rem;
 }

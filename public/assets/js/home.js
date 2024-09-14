@@ -1,6 +1,16 @@
 // For removing item to calculator container
 const calcItem = document.getElementById('calc-item').cloneNode(true);
 const calcList = document.getElementById('calc-list')
+
+
+const consumptionTime = document.querySelector('.load-time')
+consumptionTime.addEventListener('input', (event)=>{
+  if(Number(event.target.value) > 0 && Number(document.querySelector('.total-load').value) > 0)  clacBtn.disabled = false
+})
+
+const clacBtn = document.querySelector('.clac-btn')
+clacBtn.disabled = true;
+
 const rmvItemBtn = document.querySelector('.remove-calc-item')
 rmvItemBtn.disabled = true;
 rmvItemBtn.addEventListener('click', rmvItem)
@@ -31,6 +41,7 @@ function rmvItem(event) {
   if (rmvItemBtns.length == 1) {
     rmvItemBtns[0].disabled = true;
   }
+  addLoad()
 }
 
 
@@ -42,17 +53,22 @@ function addLoad() {
     totalLoad += Number(input.value*quantity);
   })
   document.querySelector('.total-load').value=totalLoad
+  if (totalLoad > 0 && Number(consumptionTime.value) > 0 ) clacBtn.disabled = false
   console.log("total load", totalLoad)
 }
 
 // Calculating the Solar Usage blh blah blah
 
   /*__________Solar Power Calculator | PROPERTY______________ **/ 
-  function generateSolarSystem() {  
-    const totalWat = document.querySelector('.total-load').value
-    const loadTime = document.querySelector('.loadTime').value; 
+clacBtn.onclick = generateSolarSystem
 
-    // const totalPanelsToUse = document.getElementById('panels').value; 
+
+  function generateSolarSystem() {  
+    console.log("generator strated")
+    const totalWat = document.querySelector('.total-load').value
+    const loadTime = document.querySelector('.load-time').value; 
+
+    const totalPanelsToUse = 5; 
  
     //CALCULATING THE BATTERIES.
     var totalLoadConsumption = parseInt(totalWat) * parseInt(loadTime); 
@@ -67,11 +83,13 @@ function addLoad() {
     var chargeDurationInHour = chargeDuration.toFixed(2);  
 
     //Ouput Data
-    document.querySelector('loads').innerHTML = totalWat;
-    document.querySelector('timeUsage').innerHTML = loadTime;
-    document.getElementById('param44').innerHTML = Math.trunc(batteriesToUse)+" pieces of 200Ah batteries";
-    document.getElementById('param55').innerHTML = Math.trunc(totalPanelsToUse)+" pieces of 300W panels.";
-    document.getElementById('param66').innerHTML = "Charging duration "+chargeDurationInHour+" hours.";
+    document.querySelector('.loads').innerText = totalWat;
+    document.querySelector('.time-usage').innerHTML = loadTime;
+    document.querySelector('.battery-amount').innerHTML = Math.trunc(batteriesToUse)+" pieces of 200Ah batteries";
+    document.querySelector('.panel-amount').innerHTML = Math.trunc(totalPanelsToUse)+" pieces of 300W panels.";
+    document.querySelector('.charging-duration').innerHTML = "Charging duration "+chargeDurationInHour+" hours.";
+    document.querySelector('.result-display').style.display = "block";
+    console.log("finished generation")
   }
 
 
