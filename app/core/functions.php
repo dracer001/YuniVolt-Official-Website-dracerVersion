@@ -52,4 +52,10 @@ function getHourDiffer($startT)
     $hours = $diff / ( 60 * 60 );
 	return $hours;
 }
+
    
+function returnJson($response)
+{
+	header('Content-Type: application/json');
+	echo json_encode($response);
+}

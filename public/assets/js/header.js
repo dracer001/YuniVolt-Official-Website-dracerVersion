@@ -1,5 +1,4 @@
-console.log("hello world");
-console.log("hello world 2");
+console.log("hello header");
 const navBar = document.querySelector(".nav-content-container")
 document.querySelector(".nav-btn").addEventListener('click', function (event) {
   navBar.classList.add('open');
@@ -33,8 +32,6 @@ window.addEventListener('scroll', () => {
   
   lastScrollTop = scrollTop;
 });
-
-
 
 
 

@@ -32,5 +32,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 
 	//root path e.g https://www.yourwebsite.com
 	define('ROOT', 'https://ibtsociety.000webhostapp.com');
+
+
 }
 

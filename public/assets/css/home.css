@@ -250,6 +250,9 @@ tbody::-webkit-scrollbar-button {
   font-size: 0.9em;
 }
 
+.btn.remove-calc-item{
+  border: none;
+}
 .remove-calc-item{
   font-size: 1.2em;
 }

@@ -46,7 +46,6 @@ class App
 		$arr = explode("/", $url);
 		return $arr;
 	}
-
 }
 
  

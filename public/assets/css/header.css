@@ -130,5 +130,19 @@ header{
   }
   
 
+  .modal-title{
+    color: darkorange;
+  }
+
+  .reg-btn{
+    color: #fff;
+    background-color: #ff8c00;
+
+  }
+  #sign-up-form label,
+  #sign-in-form label{
+
+  }
+
   @media screen and (min-width: 992px){
   }
