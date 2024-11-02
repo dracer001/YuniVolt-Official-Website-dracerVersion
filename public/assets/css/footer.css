@@ -1,31 +1,26 @@
 
 footer{
-    /*  background: #262d4b;052F5F 03045E*/
-    background: #0A1128 ;
-     color: white;
-   }
-   footer .form{
-     max-width: 568px;
-     border: 1px solid white;
-     border-radius: 15px;
-   }
+    background: #002341 ;
+    /* background: #c1d5e5 ; */
+    color: #aaa;
+    font-size: 0.9em
+}
+
+.newsletter-form{
+  max-width: 568px;
+}
+
+.socials{
+  gap: 1em;
+  font-size: 1.2em;
+}
    
-   .newsletter-form{
-     max-width: 568px;
-   }
-   
-   li, ul{
-     list-style:none;
-     margin: 0;
-     padding: 0;
-   }
-   
-   
-   .socials{
-     gap: 1em;
-     font-size: 1.2em;
-   }
-   
-   .copyright p{
-     margin: 0;
-   }
+.copyright p{
+  margin: 0;
+}
+
+@media screen and (max-width: 567px){
+  footer{
+    font-size: 0.8em;
+  }
+}

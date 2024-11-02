@@ -1,70 +1,37 @@
- 
-    <footer class="mt-5 p-3 p-md-5">
-        <div class="form mx-auto py-3 px-4 p-lg-5">
-          <h3 class="text-center">Send us a message</h3>
-          <form>
-            <div class="mb-3 row">
-              <label for="name" class="form-label col-4">Name</label>
-              <div class="col-8">
-                <input type="text" class="form-control" id="name">
-              </div>
-            </div>
-            
-            <div class="mb-3 row">
-              <label for="email" class="form-label col-4">Email</label>
-              <div class="col-8">
-                <input type="email" class="form-control" id="email">
-              </div>    
-            </div>
-            
-            <div class="mb-3 row">
-              <label for="message" class="form-label col-4">Message</label>
-              <div class="col-8">
-                <textarea class="form-control" id="message"></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-4"></div>
-              <div class="col-8">
-                <button type="submit" class="btn btn-primary">Send</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        
+
+    
+    <footer class="mt-5 py-3 py-md-5 px-4" id="contacts">
         <div class="row my-3 justify-content-between">
-          
-          <div class="news-letter col-12 col-lg-4">
-            <h3 class="text-center text-lg-start">Subscribe to our news letter</h3>
-           
+  
+          <div class="news-letter col-12 col-md-4">
+            <h3 class=" h4 text-center text-md-start sub-header">Subscribe to our news letter</h3>
             <div class="d-flex newsletter-form mx-auto justify-content-center justify-content-lg-start">
               <div class="">
                 <input type="email" class="form-control" id="newsletter">
               </div>
               <div class=" ms-2">
-                <button type="submit" class="btn btn-outline-primary">Subscribe</button>
+                <button type="submit" class="btn btn-outline-main">Subscribe</button>
               </div>
             </div>      
           </div>
           
-          <div class="product-services col-6 col-lg-4 my-3">
-           <h3>Products & Service</h3>
+          <div class="product-services col-6 col-md-4 mt-3 mt-md-0">
+           <h3 class="h4 sub-header">Products & Service</h3>
             <ul class="">
-              <li>Solar & Inveters</li>
-              <li>CCTV Installation</li>
-              <li>Electrical Installation</li>
-              <li>Home Automation</li>
-              <li>Software (Solar Packages)</li>
+              <li><a href="<?=ROOT?>/?url=services/#solar-inverter">Solar & Inveters</a> </li>
+              <li><a href="<?=ROOT?>/?url=services/#cctv">CCTV Installation</a> </li>
+              <li><a href="<?=ROOT?>/?url=services/#electrical-installation">Electrical Installation</a> </li>
+              <li><a href="<?=ROOT?>/?url=services/#home-automation">Home Automation</a> </li>
+              <li><a href="<?=ROOT?>/?url=services/#software-packages">Software (Solar Packages)</a> </li>
+              <li><a href="<?=ROOT?>/?url=services/#training">Yunivolt Academy</a></li>
             </ul>
           </div>
-          <div class="Academy course col-6 col-lg-4 my-3">
-            <h3>Academic Courses</h3>
+          <div class="Academy course col-6 col-md-4 mt-3 mt-md-0">
+            <h3 class="h4 sub-header">Academic Courses</h3>
             <ul class="">
-              <li>Solar & Inveters</li>
-              <li>CCTV Installation</li>
-              <li>Electrical Installation</li>
-              <li>Home Automation</li>
-              <li>Software (Solar Packages)</li>
+              <?php foreach($all_courses as $course): ?>
+                <li><a href="<?=ROOT?>/?url=academy/#course-<?=$course->course_id?>"><?=$course->title?></a> </li>
+              <?php endforeach; ?>
             </ul>
           </div>
         </div>
@@ -72,12 +39,12 @@
 
         <div class="row align-items-center">
           
-          <div class="company-footer col-6 col-md-4">
+          <div class="company-footer col-6 col-md-4 d-none d-md-block">
             <div class="d-flex align-items-center">
-              <img src="<?=ROOT?>/assets/media/icons/logo.png" alt="Logo" width="40" height="34" class="d-inline-block align-text-top">
+              <img src="<?=ROOT?>/assets/media/icons/logo.png" alt="Logo" width="40" class="d-inline-block align-text-top">
               <div class="company-title d-flex flex-column align-items-center justify-content-center">
                 <span class="company-name">Yunivolt</span>
-                <span class="company-slogan">(Power & Security)</span>
+                <span class="company-slogan">(Power & Digital Security)</span>
               </div>
             </div>
           </div>

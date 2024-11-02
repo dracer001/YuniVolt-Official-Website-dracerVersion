@@ -1,0 +1,176 @@
+.about-content{
+  font-size: 1.1em;
+line-height: 1.6;
+font-family: "Open Sans", sans-serif;
+}
+
+.statement{
+}
+
+.statement .card-body{
+  background-color: orange;
+  font-size: 1.05em;
+  font-family: "Open Sans", sans-serif;
+}
+.statement .card-header{
+font-weight:bold;
+background-color: rgb(255, 94, 0);
+color: #fff;
+}
+
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .gallary-container {
+    position: relative;
+    border: 2px solid #333;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.747);
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    /* max-width: 680px; */
+    margin: auto;
+    height: 400px;
+    position: relative;
+  }
+
+  .mySlides img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    position: absolute;
+  }
+
+  .slide-container{
+    position: relative;
+  }
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.404);
+
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    text-shadow: 0 0 1px rgb(0, 0, 0);
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    color: white;
+  }
+  
+  .g-collection-container{
+    overflow-x: scroll;
+    gap: 1rem;
+    
+  }
+
+/* Customize the scroll bar for webkit-based browsers */
+
+.g-collection-container::-webkit-scrollbar {
+  width: 1px; /* Adjust the width of the scrollbar */
+  height: 8px;
+  
+}
+
+.g-collection-container::-webkit-scrollbar-track {
+  background-color: #888; /* Scrollbar track/container color */
+  border-radius: 12px;
+}
+
+.g-collection-container::-webkit-scrollbar-thumb {
+  background-color: #333; /* Color of the scrollbar thumb */
+  border-radius: 12px;
+  width: 5px;
+  /* height: 2px; */
+}
+
+/* Optional: To hide scroll arrows (only works on some browsers) */
+.g-collection-container::-webkit-scrollbar-button {
+  display: none;
+}
+
+
+
+  .g-collection{
+    height: 100px;
+    min-width: 200px;
+  }
+
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+
+  @media screen and (max-width: 576px) {
+    .mySlides{
+      height: 320px;
+    }
+
+    .g-collection{
+      height: 90px;
+      min-width: 120px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .mySlides{
+      height: 350px;
+    }
+
+    .g-collection{
+      height: 90px;
+      min-width: 150px;
+    }
+  }

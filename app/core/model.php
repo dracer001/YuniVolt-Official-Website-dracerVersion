@@ -31,6 +31,12 @@ class Model extends Database
 
 	}
 
+	public function all()
+	{
+		$query = "select * from ".$this->table;
+		return $this->query($query);
+	}
+
 	public function where($data)
 	{
 
@@ -43,14 +49,7 @@ class Model extends Database
 		}
  
  		$query = trim($query,"&& ");
-		$res = $this->query($query,$data);
-
-		if(is_array($res))
-		{
-			return $res;
-		}
-
-		return false;
+		return $this->query($query,$data);
 
 	}
 
@@ -66,12 +65,7 @@ class Model extends Database
         $query = trim($query,"&& ");
         $query .= " order by id desc limit 1"; 
         $result = $this->query($query,$data); 
-        
-        if(is_array($result))
-        {
-            return $result[0];
-        }
-        return false;
+        return $result;
 	}
 
 	 

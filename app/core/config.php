@@ -13,10 +13,10 @@ define('APP_DESC', 'Power And Security');
 if($_SERVER['SERVER_NAME'] == 'localhost')
 {
 	//database config for local server
-	define('DBHOST', 'localhost:3306');
+	define('DBHOST', 'localhost:3308');
 	define('DBNAME', 'yunivolt');
-	define('DBUSER', 'root');
-	define('DBPASS', '');
+	define('DBUSER', 'dracer');
+	define('DBPASS', 'mysql_password');
 	define('DBDRIVER', 'mysql');
 
 	//root path e.g localhost/
@@ -25,13 +25,13 @@ if($_SERVER['SERVER_NAME'] == 'localhost')
 {
 	//database config for live server
 	define('DBHOST', 'localhost');
-	define('DBNAME', 'id21274299_yunivolt');
-	define('DBUSER', 'id21274299_root');
-	define('DBPASS', 'MaxWonder@10');
+	define('DBNAME', 'yunivolt');
+	define('DBUSER', 'root');
+	define('DBPASS', 'mysql_password');
 	define('DBDRIVER', 'mysql');
 
 	//root path e.g https://www.yourwebsite.com
-	define('ROOT', 'https://ibtsociety.000webhostapp.com');
+	define('ROOT', 'http://192.168.142.184/yunivolt/public');
 
 
 }

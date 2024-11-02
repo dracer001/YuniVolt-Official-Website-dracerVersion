@@ -1,62 +1,107 @@
-console.log("Hello auth");
+console.log("Hello Auth");
 
-const ROOT_URL = document.getElementById('root-url').value;
-const signUpForm = document.getElementById('sign-up-form');
-const errorContainer = document.getElementById('error-container'); // Assume there's a container for general error messages
+const signUpForm = document.getElementById('sign-up-form') ?? false;
+const signInForm = document.getElementById('sign-in-form') ?? false;
+if (signUpForm) {
+    signUpForm.addEventListener('submit', (e) => {
+        // prevent default sign up
+        e.preventDefault();
 
-signUpForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+        // create form object
+        const formData = new FormData(e.target);
 
-    // Get input elements
-    const regName = document.getElementById('reg-name');
-    const regEmail = document.getElementById('reg-email');
-    const regPassword = document.getElementById('reg-password');
-    const cPassword = document.getElementById('c-password');
+        // Clear previous errors
+        clearErrors(signUpForm);
 
-    // Clear previous errors
-    clearErrors();
+        // Get input elements
+        const regName = document.getElementById('reg-name');
+        const regEmail = document.getElementById('reg-email');
+        const regPassword = document.getElementById('reg-password');
+        const cPassword = document.getElementById('c-password');
 
-    // Validate inputs
-    let valid = true;
-    if (!filterInput(regName, "name")) valid = false;
-    if (!filterInput(regEmail, "email")) valid = false;
-    if (!filterInput([regPassword, cPassword], "password")) valid = false;
+        // Validate inputs
+        let valid = true;
+        if (!filterInput(regName, "name")) valid = false;
+        if (!filterInput(regEmail, "email")) valid = false;
+        if (!filterInput([regPassword, cPassword], "password")) valid = false;
+        if (!valid) return;
 
-    if (!valid) return;
+        showLoader(signUpForm);
+        formData.append("lastname", regName.value.split(' ')[1] || '');
+        formData.append("firstname", regName.value.split(' ')[1] || '');
+        sendJsonForm(formData, `${ROOT_URL}/?url=signup`, (response)=>{
+            hideLoader(signUpForm);
+            if (response?.success) {
+                displaySuccess(signUpForm, "Registration Successful !");
 
-    // Show loader
-    showLoader();
-
-    // Send AJAX request
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", `${ROOT_URL}/?url=signup`);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    xhttp.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-
-            console.log(this.responseText);
-
-            hideLoader();
-
-            // Process response
-            let response;
-            try {
-                response = JSON.parse(this.responseText);
-            } catch (e) {
-                response = { status: "error", message: "Invalid JSON response" };
-                return false;
+                // Log the User In Automatically
+                setTimeout(() => {
+                    signUpForm.querySelector(".server-msg").innerHTML = `
+                        <div class="alert p-2"> please wait while we log you in </div>
+                    `;  
+                    sendJsonForm(formData, `${ROOT_URL}/?url=signin`, (response)=>{
+                        (response?.success) ?
+                            location.reload() :
+                            signUpForm.querySelector(".server-msg").innerHTML = `
+                            <div class="alert p-2"> we encountered an error logging you in, please log in manually</div>
+                            `; 
+                    }, (error)=>{
+                        signUpForm.querySelector(".server-msg").innerHTML = `
+                        <div class="alert p-2"> we encountered an error logging you in, please log in manually</div>
+                        `; 
+                    })
+                }, 2000);
+                    return;
+            } 
+            else if (response?.message) {
+                displayErrors(signUpForm, response.message);
+                return;
             }
-            console.log(response);
-            if (response.status === "error") {
-                displayErrors(response.message);
-            } else {
-                displaySuccess(response.message);
+            displayErrors(signUpForm, "Registration Failed !, please try again.");
+            return;
+        }, (error)=>{
+            hideLoader(signUpForm);
+            displayErrors(signUpForm, "Server Error");
+            return;
+        })  
+    })
+}
+
+
+if (signInForm) {
+    signInForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        clearErrors(signInForm);
+
+        const formData = new FormData(e.target);
+
+        if (!filterInput(document.getElementById('log-email'), "email")) return;
+    
+        // Show loader
+        showLoader(signInForm);
+    
+        // Send AJAX request
+        sendJsonForm(formData, `${ROOT_URL}/?url=signin`, (response)=>{
+            hideLoader(signInForm);
+            if(response?.success) {
+                displaySuccess(signInForm, "Login Successful! Reloading Page");
+                setTimeout(() => {
+                    // Reload the current page
+                    location.reload();
+                }, 2000)
+                return;
+            } else if(response?.message) {
+                displayErrors(signInForm, response.message);
             }
-        }
-    };
-    xhttp.send(`lastname=${encodeURIComponent(regName.value.split(' ')[1] || '')}&firstname=${encodeURIComponent(regName.value.split(' ')[0] || '')}&email=${encodeURIComponent(regEmail.value)}&password=${encodeURIComponent(regPassword.value)}`);
-});
+        }, (error)=>{
+            displayErrors(signInForm, "Login Failed !, please try again.");
+            return;
+        })
+    })
+}
+
+
 
 function filterInput(input, type) {
 
@@ -126,23 +171,73 @@ function displayError(input, message) {
     errorElement.style.display = 'block';
 }
 
-function clearErrors() {
-    document.querySelectorAll('.form-group .invalid-feedback').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.form-control').forEach(el => el.classList.remove('is-invalid'));
+function clearErrors(form) {
+    form.querySelectorAll('.form-group .invalid-feedback').forEach(el => el.style.display = 'none');
+    form.querySelectorAll('.form-control').forEach(el => el.classList.remove('is-invalid'));
+    form.querySelector(".server-msg").innerHTML = "";
 }
 
-function showLoader() {
-    document.getElementById('loader').style.display = 'block'; // Assume there's an element with id 'loader'
+function showLoader(form) {
+    form.querySelector('.loading-form').classList.remove("d-none")
+    form.parentNode.parentNode.classList.add("loader-bg");
 }
 
-function hideLoader() {
-    document.getElementById('loader').style.display = 'none';
+function hideLoader(form) {
+    form.querySelector('.loading-form').classList.add("d-none")
+    form.parentNode.parentNode.classList.remove("loader-bg");
 }
 
-function displayErrors(message) {
-    errorContainer.innerHTML = `<div class="alert alert-danger">${message}</div>`;
+
+
+
+// document.getElementById("sign-out").addEventListener("click", signOut)
+// function signOut() {
+//         // Send AJAX request
+//         const xhttp = new XMLHttpRequest();
+//         xhttp.open("POST", `${ROOT_URL}/?url=signout`);
+//         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    
+//         xhttp.onreadystatechange = function() {
+//             if (this.readyState === 4 && this.status === 200) {
+//                 // Process response
+//                 let response;
+//                 try {
+//                     response = JSON.parse(this.responseText);
+//                 } catch (e) {
+//                     response = { status: "error", message: "Invalid JSON response" };
+//                     displayErrors(signInForm, "Server Error !");
+//                     return false;
+//                 }
+//                 console.log(response);
+//                 if (response?.status === "error") {
+//                     displayErrors(signInForm, response.message);
+//                 } else if(response?.status == "success") {
+//                     displaySuccess(signInForm, "Login Successful !");
+//                 }else{
+//                     displayErrors(signInForm, "Login Failed !, please try again.");
+//                 }
+//             }
+//         };
+//         setTimeout(() => {
+//         xhttp.send(`&email=${encodeURIComponent(logEmail.value)}&password=${encodeURIComponent(logPassword.value)}`);
+//         }, 2000);
+// }
+
+function handleGoogleAuth(response) {
+    console.log("response", response);
+    const token = response.credential;
+
+    sendJsonForm(JSON.stringify({ "token": token }), `${ROOT_URL}/?url=signup/google`, (response)=>{
+        if(response?.success){
+            notify("Login Successful", "success")
+            setTimeout(() => {
+                location.reload() 
+            }, 3000);
+        }else{
+            notify("server error 1", "error")
+        }
+        return;
+    }, (err)=>notify("server error 2", "error"))
 }
 
-function displaySuccess(message) {
-    errorContainer.innerHTML = `<div class="alert alert-success">${message}</div>`;
-}
+

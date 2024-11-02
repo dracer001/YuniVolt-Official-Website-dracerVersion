@@ -1,51 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=SUSE:wght@100..800&display=swap');
 
+
+:root {
+    --primary-color: #ff7b00;
+    --primary-color-dark: #ff6600;
+    --primary-color-light: #ff8c00;
+    --base-bg: rgb(243, 247, 252);
+    --dark-bg: #002341;
+    --light-bg: #c1d5e5;
+    --text-color-main: #555;
+    
+}
+
 body{
-  color: #555;
-  background: aliceblue;
+  color:  var(--text-color-main);
+  background: var(--base-bg);
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
 }
 
+/* SUB HEADERS */
 h2.sub-header{
   font-family: "SUSE", sans-serif;
-  /* font-family: "Open Sans", sans-serif; */
   font-weight: 300;
 }
-  
+
+h3.sub-header{
+    /* color: #f88808; */
+    color: var(--primary-color-light);
+    font-family: "Quicksand", sans-serif;
+}
 
 .header-underline{
     width: 100px;
     height: 2px;
     background: #9df279;  
+    /* background: #ffa500;   */
 }
 
-.btn-c-primary{
-    background-color: #ff6600;
-    border-color: #ff6600;
+/* BUTTONS */
+.btn-main{
+    background-color: var(--primary-color-light);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 7px;
+    border: none;
+    text-decoration: none;
+}
+.btn-main:hover{
+    background-color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
     color: #fff;
 }
-  
-.btn-c-outline-primary{
+
+.btn-outline-main{
     background: transparent;
-    color: #ff6600;
-    border: 1px solid #ff6600;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    text-decoration: none;
+    border-radius: 6px;
+
 }
-  
-.btn-g-primary{
-    background-color: #1dd41d;
-    border-color: #1dd41d;
+
+.btn-outline-main:hover{
+    background: var(--primary-color);
     color: #fff;
+    border: 1px solid var(--primary-color);
 }
-  
-.btn-g-outline-primary{
-    background: transparent;
-    color: #1dd41d;
-    border: 1px solid #1dd41d;
+
+
+li, ul{
+    list-style:none;
+    margin: 0;
+    padding: 0;
 }
-  
-.btn-b-primary{
-    background-color: #03045E;
-    border-color: #03045E;
-    color: #fff;
+
+a{
+    text-decoration: none;
+    color: inherit;
 }

@@ -59,3 +59,13 @@ function returnJson($response)
 	header('Content-Type: application/json');
 	echo json_encode($response);
 }
+
+
+// Helper function for required fields
+function checkRequired($field, $label, $data, &$errors) {
+    if (!isset($data[$field]) || empty(trim($data[$field]))) {
+        $errors[] = "$label is required.";
+        return false;
+    }
+    return trim($data[$field]);
+}

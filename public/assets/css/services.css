@@ -1,0 +1,91 @@
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000008c;
+    z-index: 1;
+}
+.hero{
+    position: relative;
+    /* background: linear-gradient(190deg, rgb(2, 13, 107), aliceblue); */
+    background-color: #333;
+    background: url("../media/images/service_bg_1.jpeg") right bottom no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgb(198, 205, 211);
+    min-height: 40vh;
+}
+.hero-text{
+    position: relative;
+    z-index: 3;
+}
+.hero-title{
+    color: #ff6600;
+}
+span.chests-icon{
+    background: linear-gradient(45deg, #ff3c00, #ffa500, #1dd41d); /* Gradient colors */
+    -webkit-background-clip: text; /* Clips background to the text */
+    background-clip: text; /* Clips background to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text color transparent to show the gradient */
+}
+
+.service-title{
+    /* font-family: "SUSE", sans-serif; */
+    font-family: "Open Sans", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.service .card-footer{
+    background-color: var(--dark-bg);
+}
+
+
+.service .card-icon{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    background-color: var(--primary-color-light);
+    border-radius: 12px;
+}
+
+.service .card-body{
+    margin-top: 60px;
+}
+
+.card{
+    border-radius: 15px;
+}
+
+.service-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+
+}
+
+.service-list li{
+    /* list-style: disc; */
+    font-weight: bold;
+    color: var(--dark-bg);
+    /* font-family: "SUSE", sans-serif; */
+    font-family: "Quicksand", sans-serif;
+    margin-bottom: 5px;
+
+}
+
+.service-list i{
+    color: var(--dark-bg);
+}
+.service-container{
+    margin-top: 80px;
+}

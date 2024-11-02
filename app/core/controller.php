@@ -10,7 +10,9 @@ class Controller
 	{
 
 		extract($data);
-		
+        $courseDB = new Course();
+		$response = $courseDB->all();
+		$all_courses = ($response["success"]) ? $response["data"] : [];
 		$filename = "../app/views/".$view.".view.php";
 		//echo "Attempting to load: " . $filename; 
 		if(file_exists($filename))

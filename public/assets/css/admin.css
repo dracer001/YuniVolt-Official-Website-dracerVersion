@@ -23,3 +23,34 @@
   text-align: center;
   margin-top: 0.5rem;
 }
+
+
+section{
+  display: none;
+}
+
+
+/* gpt upload gallary */
+#upload-gallary form{
+  max-width: 760px
+}
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-blue {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+.btn-blue:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+.custom-file-label::after {
+  content: "Browse";
+}

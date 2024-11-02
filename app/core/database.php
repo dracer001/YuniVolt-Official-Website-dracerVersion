@@ -112,7 +112,7 @@ class Database
 	// 	try {
 	// 		// Connect to the database
 	// 		$con = $this->connect();
-
+	
 	// 		// Prepare the SQL query
 	// 		$stm = $con->prepare($query);
 	// 		if ($stm === false) {

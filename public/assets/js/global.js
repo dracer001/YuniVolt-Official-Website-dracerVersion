@@ -1,107 +1,60 @@
-//_____GENERAL | PROPERTY_______________________________________    
-function profileTabController(tabName) {
-    var i;
-    var x = document.getElementsByClassName("profileTab");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
+const ROOT_URL = document.getElementById('root-url').value;
+
+const sendJsonForm = async (formData, location, responseCallback, errorCallback = null)=>{
+
+  // Send data using fetch
+  fetch(location, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(response => {
+    try {
+      console.log("response text", response);
+      // Attempt to parse the response as JSON
+      response = JSON.parse(response);
+      return responseCallback(response);
+    } catch (error) {
+        // Catch any errors from JSON parsing
+        console.error("Error parsing JSON:", error);
+        let error_response = (errorCallback) ? errorCallback(error) : console.log(error);
+        return error_response;
     }
-    document.getElementById( tabName).style.display = "block";  
-  }
-   
-//_____ALL Window Onload | PROPERTY_______________________________________     
+  })
+  .catch(error => {
+    // Catch any other errors, such as network issues
+    console.error("Error in fetch:", error);
+    let error_response = (errorCallback) ? errorCallback(error) : console.log(error);
+    return error_response;
+  });
+
+}
 
 
- function controlPopup(sectionID){
-    var activePage = document.getElementById(sectionID); 
-    if (window.getComputedStyle(activePage).display === "none") { 
-        activePage.style.display =  "block"; 
-        toggleOff();
-    }else{
-        activePage.style.display =  "none";  
-    }
- }
 
-  
-/*__________Tab Control | PROPERTY________________  
- * HOW I SOLVED AND BUILT THE TAB CONTROL SYSTEM: 
- * I am using the function to collect the current active tab on click (by requesting a param).
- * In line 2 of the function am getting all element with the class name "js-tab"
- * and hidding them using "display:none;", so lastly am showing the active class.  
- * 
- **/
-  function tabController(tabName) {
-    var i;
-    var x = document.getElementsByClassName("js-sec-tabs");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    document.getElementById(tabName).style.display = "block"; 
-    toggleOff();
-  }  
+function displayErrors(form, message) {
+  form.querySelector(".server-msg").innerHTML = `
+      <div class="alert alert-danger p-2"><i class='bi bi-info-circle-fill'></i> ${message}</div>
+  `;
+}
 
-  function getLink_NT(url) {
-    window.open(url, "_blank");
-  }  
-
-  /*__________Solar Power Calculator | PROPERTY______________ **/ 
-  function addElectricLoad() {
-    const electronic = document.getElementById('electronic').value;
-    const electronic_wat = document.getElementById('electronicWat').value;
-    const loadsContainer = document.getElementById('loadsContainer');
-    const watHolder = document.getElementById('watHolder').value; 
-    const loadTime = document.getElementById('loadTime').value; 
-
-    // Clear previous options
-    //loadsContainer.innerHTML = '';  
-    const span = document.createElement('span');
-    span.textContent = `${electronic} ${electronic_wat}`; 
-    span.classList.add("dynaLoads");
-    loadsContainer.style.display = "block";   
-    loadsContainer.appendChild(span);   
- 
-    var totalSumOfWat = parseInt(watHolder) + parseInt(electronic_wat); 
-    document.getElementById('watHolder').value = totalSumOfWat; 
-     
-  }
-
-  function clearElectricLoad() { 
-    const loadsContainer = document.getElementById('loadsContainer');  
-
-    // Clear previous options
-    loadsContainer.innerHTML = '';
-    loadsContainer.style.display = "none";  
-    document.getElementById('watHolder').value = 0;
-  }
-
-  function generateSolarSystem() {  
-    const totalWat = document.getElementById('watHolder').value;
-    const loadTime = document.getElementById('loadTime').value; 
-    const totalPanelsToUse = document.getElementById('panels').value; 
- 
-    //CALCULATING THE BATTERIES.
-    var unknownParam1 = parseInt(totalWat) * parseInt(loadTime); 
-    var batteriesToUse = unknownParam1 / 1800; 
-
-    //CALCULATING THE PANELS
-    var singleBattery_Ah = 200; 
-    //var panel_300W = 300;
-    //var const_12V = 18;
-    var singlePanel_C_Output = 16.66;
-    var total_battery_Ah = Math.trunc(batteriesToUse)*singleBattery_Ah;
-    var totalPanel_C_Output = singlePanel_C_Output.toFixed(2)*totalPanelsToUse;
-    var chargeDuration = total_battery_Ah/totalPanel_C_Output;
-    var chargeDurationInHour = chargeDuration.toFixed(2);  
-    //var chargeDurationInHour = Math.trunc(chargeDuration);  
-
-    //Ouput Data
-    document.getElementById("resultWrapper").style.display = "block"; 
-    document.getElementById('loads').innerHTML = totalWat;
-    document.getElementById('timeUsage').innerHTML = loadTime;
-    document.getElementById('param44').innerHTML = Math.trunc(batteriesToUse)+" pieces of 200Ah batteries";
-    document.getElementById('param55').innerHTML = Math.trunc(totalPanelsToUse)+" pieces of 300W panels.";
-    document.getElementById('param66').innerHTML = "Charging duration "+chargeDurationInHour+" hours.";
-  }
+function displaySuccess(form, message) {
+  form.querySelector(".server-msg").innerHTML = `
+  <div class="alert alert-success p-2"><i class='bi bi-check-circle-fill'></i> ${message}</div>`;
+}
 
 
-  /*__________Solar Power Calculator | CLOSED______________ **/ 
-
+function notify(message, type) {
+  console.log("notify", message)
+  message = (type == "error") ?
+    `<div class="alert alert-danger" role="alert">${message}</div>` :
+    (type == "success") ?
+    `<div class="alert alert-success" role="alert">${message}</div>`:
+    message;
+  let notifyEl = document.getElementById("notify")
+  notifyEl.innerHTML = message;
+  notifyEl.classList.add("display");
+  setTimeout(() => {
+    notifyEl.classList.remove("display");
+  }, 3000);
+}
